@@ -55,6 +55,12 @@
     "webpack-dev-server": "^2.9.4"
   },
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "**/*.{js,jsx}",
+        "!**/node_modules/**",
+        "!**/vendor/**"
+    ],
     "rootDir": ".",
     "testRegex": "/src/test/.*test\\.js$",
     "setupFiles": [
@@ -72,6 +78,6 @@
     "includeFailureMsg": true
   },
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest"
   }
 }
