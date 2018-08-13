@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchProducts, fetchCount } from "../actions/action-creators";
+//import { fetchProducts, fetchCount } from "../actions/action-creators";
+import { fetchProducts, fetchCount } from "../odata-client/odata";
 import { bindActionCreators } from "redux";
 import './style.css';
 
