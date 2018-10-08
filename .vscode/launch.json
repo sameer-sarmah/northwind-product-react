@@ -15,6 +15,19 @@
             "request": "launch",
             "name": "Jest",
             "program": "${workspaceFolder}\\node_modules\\jest\\bin\\jest.js"
+        },
+        {
+            "name": "npm scripts",
+            "type": "node",
+            "request": "attach",
+            "port": 5858,
+            "address": "localhost",
+            "restart": false,
+            "sourceMaps": false,
+            "localRoot": "${workspaceRoot}",
+            "remoteRoot": "C:\\Users\\ssarmah\\Documents\\GitHub\northwind-product-react",
+            "protocol":"auto"
+
         }
     ]
 }

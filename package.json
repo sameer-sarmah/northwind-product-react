@@ -80,6 +80,7 @@
     "includeFailureMsg": true
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "debug": "node --inspect-brk=5858 webpack.config.js"
   }
 }
