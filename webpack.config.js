@@ -2,6 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const ExtractCSS= require('extract-text-webpack-plugin');
+const serverProxy={
+  '/':{
+    target:'http://localhost:3004'
+  }
+};
+
 
 module.exports = {
   devtool: 'source-map',
@@ -66,6 +72,7 @@ module.exports = {
     port: 8087,
     hot: true,
     historyApiFallback: true,
+    proxy:serverProxy
   }
 };
   

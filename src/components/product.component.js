@@ -47,7 +47,7 @@ class ProductList extends Component {
     }
 
     render() {
-        if(!this.props.products || this.props.products.length===0){
+        if(!this.props.products || this.props.products.length === 0){
             return (<div></div>);
         }
         const table= (
