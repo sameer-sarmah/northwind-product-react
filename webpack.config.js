@@ -7,7 +7,7 @@ const {fetchProducts} =require('./mocks/fetchProducts');
 const {products} = require('./mocks/data/Products');
 const serverProxy={
   '/':{
-    target:'http://localhost:3004'
+    target:'http://localhost:3000'
   }
 };
 
@@ -75,15 +75,15 @@ module.exports = {
     port: 8087,
     hot: true,
     historyApiFallback: true,
-    //proxy:serverProxy
-    before: function(app, server) {
-      app.get('/products', function(request, response) {
-        response.json(fetchProducts(5));
-      });
-      app.get('/products/count', function(request, response) {
-        response.json({count:products.value.length});
-      });
-    }
+    proxy:serverProxy
+    // before: function(app, server) {
+    //   app.get('/Products', function(request, response) {
+    //     response.json(fetchProducts(5));
+    //   });
+    //   app.get('/Products/$count', function(request, response) {
+    //     response.json({count:products.value.length});
+    //   });
+    // }
   }
 };
   

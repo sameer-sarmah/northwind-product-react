@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const growingThreshold = 5;
 //const svcURL = 'https://cors-anywhere.herokuapp.com/services.odata.org/Northwind/Northwind.svc/Products';
-const svcURL = 'products';
+const svcURL = 'Products';
 
 export function fetchProducts(options) {
   let top = growingThreshold;
@@ -27,7 +27,7 @@ export function fetchProducts(options) {
     request.then((data) => {
       dispatch({
         type: FETCH_PRODUCTS,
-        payload: data.data
+        payload: data.data.value
       });
     });
   };
@@ -37,7 +37,14 @@ export function fetchProducts(options) {
 
 export function fetchCount() {
 
-  const request = axios.get('/products/count');
+  odata().config({
+    endpoint:'/',
+    autoFormat: false,
+    version: 4,
+    headers: [{'Accept':'application/json'}]
+  });
+  const url=odata(svcURL).count().query();
+  const request = axios.get(url);
   return (dispatch) => {
     request.then((data) => {
       dispatch({

@@ -17,6 +17,12 @@
             "program": "${workspaceFolder}\\node_modules\\jest\\bin\\jest.js"
         },
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Node debug",
+            "program": "${workspaceFolder}/dist-ts/index.js"
+        },
+        {
             "name": "npm scripts",
             "type": "node",
             "request": "attach",
