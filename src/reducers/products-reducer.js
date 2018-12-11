@@ -7,7 +7,7 @@ export default function(state = {count:0,products:[]}, action) {
     return {count:state.count,products:state.products.concat(products)};
   }
   case FETCH_COUNT:{
-    const count = action.payload.count;
+    const count = action.payload;
     return {products:state.products,'count':count};
   }
   default:
